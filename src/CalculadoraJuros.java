@@ -42,7 +42,31 @@ public class CalculadoraJuros {
                 System.out.printf("Valor Final    : R$ %.2f%n", montante);
                 System.out.println("----------------------------\n");
             } else if (opcao == 2) {
-                System.out.println("Você escolheu Juros Compostos! (Lógica vem depois)");
+                System.out.println("\n--- SIMULAÇÃO DE JUROS COMPOSTOS ---");
+
+// 1. Capturando o Capital
+                System.out.print("Digite o Capital inicial (R$): ");
+                double capital = scanner.nextDouble();
+
+// 2. Capturando a Taxa
+                System.out.print("Digite a Taxa de Juros mensal (%): ");
+                double taxa = scanner.nextDouble();
+
+// 3. Capturando o Tempo
+                System.out.print("Digite o Tempo da aplicação (em meses): ");
+                int tempo = scanner.nextInt();
+
+// 4. O Motor de Cálculo (Juros Compostos)
+                double taxaDecimal = taxa / 100;
+                double montante = capital * Math.pow((1 + taxaDecimal), tempo);
+                double juros = montante - capital;
+
+// 5. Imprimindo o Extrato Formatado
+                System.out.println("\n--- EXTRATO DA SIMULAÇÃO ---");
+                System.out.printf("Valor Investido: R$ %.2f%n", capital);
+                System.out.printf("Juros Gerados  : R$ %.2f%n", juros);
+                System.out.printf("Valor Final    : R$ %.2f%n", montante);
+                System.out.println("----------------------------\n");
             } else if (opcao == 3) {
                 System.out.println("Encerrando o sistema. Até logo!");
                 break; // Essa é a palavra mágica que quebra o 'while(true)' e desliga o programa
@@ -51,7 +75,7 @@ public class CalculadoraJuros {
             }
         }
 
-        
+
         scanner.close();
     }
 }
