@@ -46,7 +46,7 @@ public class CalculadoraJuros {
                 System.out.printf("Juros Gerados  : R$ %.2f%n", juros);
                 System.out.printf("Valor Final    : R$ %.2f%n", montante);
                 System.out.println("----------------------------\n");
-                // Salvando no histórico (se ainda tiver espaço no gaveteiro)
+                // Salvando no histórico (se ainda tiver espaço na array)
                 if (contadorSimulacoes < historico.length) {
                     historico[contadorSimulacoes] = montante;
                     contadorSimulacoes++;
